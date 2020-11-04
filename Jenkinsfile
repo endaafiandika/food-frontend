@@ -11,14 +11,6 @@ pipeline {
     }
     stages {
 
-        stage('build Project') {
-            steps{
-                nodejs("node12") {
-                    sh 'yarn install'
-                }
-            }
-        }
-
         stage('Build image') {
             when {
                 expression {
