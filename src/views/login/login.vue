@@ -7,7 +7,7 @@
                     <h3>Sign In</h3>
                     <form v-on:submit.prevent="loginUser">
                         <div class="input-group form-group">
-                            <input type="text" v-model="name" class="form-control" placeholder="username">
+                            <input type="text" v-model="username" class="form-control" placeholder="username">
                         </div>
                         <div class="input-group form-group">
                             <input v-model="password" type="password" class="form-control" placeholder="password">
@@ -21,7 +21,7 @@
                     </form>
                 </div>
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        Don't have an account?<a href="">Sign Up</a>
                     </div>
             </div>
         </div>
@@ -31,11 +31,11 @@
 
 <script>
 import axios from "axios"
- export default {
+export default {
     name: 'login',
     data: function () {
       return {
-        name: "",
+        username: "",
         password: "",
         wrongCred: false 
       }
@@ -44,7 +44,7 @@ import axios from "axios"
       loginUser () {
             axios
             .post(`${process.env.VUE_APP_URL}/auth`, {
-            name: this.username,
+            username: this.username,
             password: this.password,
             })
             .then((res) => {
@@ -64,9 +64,19 @@ import axios from "axios"
 </script>
 
 <style>
+
+body {
+  background-image: url("images/bg-01.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container{
 height: 100%;
 align-content: center;
+background-size:contain;
 }
 .card{
 height: 370px;

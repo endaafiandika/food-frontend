@@ -357,7 +357,7 @@ computed: {
   height: 30px;
   padding-top: 4px;
   text-align: center;
-  color: ##D2691E !important;
+  color: #D2691E !important;
 }
   
 
