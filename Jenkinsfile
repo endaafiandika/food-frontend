@@ -58,7 +58,7 @@ pipeline {
         stage('Deploy to production') {
             when {
                 expression {
-                    BRANCH_NAME == "master"
+                    BRANCH_NAME == "production"
                 }
             }
             steps{
@@ -84,7 +84,7 @@ pipeline {
         stage('Deploy to Development') {
             when {
                 expression {
-                    BRANCH_NAME == "dev"
+                    BRANCH_NAME == "development"
                 }
             }
             steps{
@@ -92,11 +92,11 @@ pipeline {
                     sshPublisher(
                         publishers: [
                             sshPublisherDesc(
-                                configName: 'Developmen',
+                                configName: 'Development',
                                 verbose: false,
                                 transfers: [
                                     sshTransfer(
-                                        execCommand: 'docker pull endaafiandika/food-frontend; docker kill food-frontend;docker run -d --rm -p 8080:80 --name frontend 32480/frontend:dev',
+                                        execCommand: 'docker pull endaafiandika/food-frontend:dev; docker kill food-frontend;docker run -d --rm -p 8080:80 --name frontend 32480/frontend:dev',
                                         execTimeout: 120000,
                                     )
                                 ]
