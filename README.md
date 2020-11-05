@@ -1,7 +1,6 @@
 
 # food-frontend
 
-just studying 
 tes dari branch master!!!
 
 ## Project setup
