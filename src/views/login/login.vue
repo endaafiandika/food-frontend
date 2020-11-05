@@ -1,3 +1,5 @@
+
+
 <template>
 <div>
 <div class="container">
@@ -63,28 +65,23 @@ export default {
   }
 </script>
 
-<style scoped>
-
-body {
-  background-image: url("images/bg-01.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+<style>
 
 .container{
 height: 100%;
 align-content: center;
 background-size:contain;
 }
+
 .card{
 height: 370px;
 border: none;
 margin-top: 110px;
 margin-bottom: auto;
 width: 400px;
-background-color: rgba(0,0,255,0.3) !important;
+border-radius: 25px;
+box-shadow: 7px 7px 7px;
+background-image: url("images/bg-01.jpg");
 }
 
 .social_icon span:hover{
@@ -133,6 +130,7 @@ color: black;
 }
 .links a{
 margin-left: 4px;
+color: white;
 }
 .text-muted{
     color: Black !important;
