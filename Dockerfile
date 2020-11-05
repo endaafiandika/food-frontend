@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ENV VUE_APP_URL='http://52.207.244.109:4000'
 RUN npm run build
 
 # production stage
