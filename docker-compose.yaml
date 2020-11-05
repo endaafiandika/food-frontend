@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+
+    frontend:
+        image: endaafiandika/food-frontend
+        container_name: food-frontend
+        ports:
+            - 8080:80
+        networks: 
+            - deploy
+        environment:
+            - VUE_APP_URL=http://52.207.244.109:4000
+        
+
+networks:
+    deploy:
+        driver: bridge
