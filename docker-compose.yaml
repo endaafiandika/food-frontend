@@ -2,7 +2,7 @@ version: '3.3'
 services:
 
     frontend:
-        image: endaafiandika/food-frontend
+        image: endaafiandika/food-frontend:production
         container_name: food-frontend
         ports:
             - 80:80
