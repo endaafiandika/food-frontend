@@ -44,7 +44,7 @@
        <div class="row">
           <div class="col-md-1 bg-white" style="background: #FFFFFF; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); position: relative;">
                 <div style="font-size : 4em">
-                  <router-link to="/history">
+                  <router-link to="">
                     <b-icon icon="clipboard-check" class="h1 ml-4" style="color:black"></b-icon>
                   </router-link>
                     <b-icon icon="cart-plus" class="h1 ml-4 ikon" style="color:black;"></b-icon>

@@ -1,8 +1,6 @@
 
 # food-frontend
 
-tes dari branch master!!!
-
 ## Project setup
 ```
 yarn install

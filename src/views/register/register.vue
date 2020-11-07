@@ -4,25 +4,23 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-body">
-                    <h3>Sign In</h3>
-                    <form v-on:submit.prevent="loginUser">
+                    <h3>Sign Up</h3>
+                    <form v-on:submit.prevent="register">
                         <div class="input-group form-group">
                             <input type="text" v-model="username" class="form-control" placeholder="username">
                         </div>
                         <div class="input-group form-group">
                             <input v-model="password" type="password" class="form-control" placeholder="password">
                         </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Remember Me
-                        </div>
                         <div class="form-group">
-                            <input type="submit" value="Login" class="btn float-right login_btn">
+                            <input type="submit" value="Submit" class="btn float-right login_btn">
                         </div>
                     </form>
                 </div>
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="/register">Sign Up</a>
+                        Have an account?<a href="/">Sign In</a>
                     </div>
+                    <br>
             </div>
         </div>
     </div>
@@ -32,7 +30,7 @@
 <script>
 import axios from "axios"
 export default {
-    name: 'login',
+    name: 'register',
     data: function () {
       return {
         username: "",
@@ -41,19 +39,17 @@ export default {
       }
     },
     methods: {
-      loginUser () {
+      register () {
             axios
-            .post(`${process.env.VUE_APP_URL}/auth`, {
+            .post(`${process.env.VUE_APP_URL}/api/user`, {
             username: this.username,
             password: this.password,
             })
             .then((res) => {
-                console.log(res.data.result[0].msg)
-                if (res.data.result[0].msg == "Token created, login success") {
-                    localStorage.setItem("token", res.data.result[0].token);
-                    localStorage.setItem("token", res.data.result[0].refreshToken);
-                    alert("Login Berhasil");
-                    this.$router.push({ name: "home" });
+                console.log(res.data.result[0].username)
+                if (res.data.result[0].username == this.username) {
+                    alert("Register Succes");
+                    this.$router.push({ name: "login" });
                 } else {
                     alert(res.data.message);
                 }
@@ -72,7 +68,7 @@ background-size:contain;
 }
 
 .card{
-height: 370px;
+height: 270px;
 border: none;
 margin-top: 110px;
 margin-bottom: auto;
